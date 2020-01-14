@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Group Project">
+    <meta name="author" content="Group Project">
+    <title>Get-Together Bucket List</title>
+    <link rel="icon" href="./favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- My styles for this template -->
+    <link href="mycss/myMapstyle.css" rel="stylesheet">
+    <link href="mycss/mystyle.css" rel="stylesheet">
+    <link href="mycss/mystyleprofile.css" rel="stylesheet">
+    <!-- Font-->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
+
+<body class="bg-light-blue">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue  sticky-top">
+        <div class="container text-font-Playfair">
+            <div class="navbar-header">
+                <button id="nav-toggle-button" class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand text-white ml-5" href="index.html">Get-Together Bucket List</a>
+            </div>
+
+            <div class="collapse navbar-collapse " id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white" href="index.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <a class="nav-link text-white dropdown-toggle" href="" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Account</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="login.html">Sign In</a>
+                                <a class="dropdown-item" href="./php/register.php">Register</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="contactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="masthead">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row my-4 text-white text-center">
+                <div class="col-xl-10 mx-auto my-2">
+                    <h1 class="text-font-Playfair">Welcome to Get-Together Bucket List</h1>
+                    <h3 class="text-font-Playfair">Click on the buttons inside the tabbed menu:</h3>
+                </div>
+                <div class="col-xl-12 mx-auto text-font-Playfair">
+                    <div class="tab bg-dark-blue ">
+                        <button class="tablinks text-white" onclick="openProfile(event, 'New User')">New User</button>
+                        <button class="tablinks text-white" onclick="openProfile(event, 'My Account')">My
+                            Account</button>
+                        <button class="tablinks text-white" onclick="openProfile(event, 'Friends')">Friends</button>
+                        <button class="tablinks text-white" onclick="openProfile(event, 'Contact Us')">Contact
+                            Us</button>
+                    </div>
+                    <div id="New User" class="tabcontent bg-dark-blue">
+                        <h3 class="m-2">New User</h3>
+                        <a class="btn btn-lg btn-block btn-primary" href="./php/register.php">Register</a>
+                    </div>
+                    <div id="My Account" class="tabcontent bg-dark-blue">
+                        <h3 class="m-2">My Account</h3>
+                        <a class="btn btn-lg btn-block btn-primary" href="login.html">Sign In</a>
+                    </div>
+                    <div id="Friends" class="tabcontent bg-dark-blue">
+                        <section class="">
+                            <div class="container text-white">
+                                <div class="row justify-content-center">
+                                    <h3 class="my-2">We will search for your friend using the username and save it to
+                                        your friends list.</h3>
+                                </div>
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <form autocomplete="off" action="" method="">
+                                            <div class="form-row  text-center">
+                                                <div class="form-group col-md-6">
+                                                    <h5 for="save_friend">Enter username</h5>
+                                                    <input type="text" class="form-control form-control-md"
+                                                        name="save_friend" placeholder="Looking for a friend?">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <h5 for="action">Action</h5>
+                                                    <button type="button" class="btn btn-md btn-block btn-primary"
+                                                        data-toggle="popover" title="Please Go to->My Account"
+                                                        data-content="You need to Sign in to use the website.">Search
+                                                        and Save</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--/.col-lg-6-->
+                                    <div class="col-lg-6 ">
+                                        <form autocomplete="off" action="" method="POST">
+                                            <h5>Want to see a list of your friends.</h5>
+                                            <button type="button" class="btn btn-md  btn-primary" data-toggle="popover"
+                                                title="Please Go to->My Account"
+                                                data-content="You need to Sign in to use the website.">Print</button>
+                                        </form>
+                                    </div>
+                                    <!--/.col-lg-6-->
+                                </div><!-- div class="row"-->
+                            </div><!-- div class="container"-->
+                        </section>
+                    </div>
+                    <div id="Contact Us" class="tabcontent bg-dark-blue">
+                        <h3 class="m-2">Send us an email.</h3>
+                        <a class="btn btn-lg btn-block btn-primary" href="contactUs.html">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Google Map-->
+    <div class="container-fluid bg-dark-blue text-white text-center">
+        <div class="row">
+            <div class="col-xl-8 mx-auto">
+                <h3 class="text-font-Playfair">Select a country, enter an activity, and choose the city:</h3>
+            </div>
+            <div class="col-xl-8 mx-auto mb-2">
+                <form autocomplete="off" action="">
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="country">Country </label>
+                            <input type="text" class="form-control form-control-lg" name="country"
+                                placeholder="Country">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="activity">Activity</label>
+                            <input type="text" class="form-control form-control-lg" name="search_activity"
+                                placeholder="What are you searching for?">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="city">City </label>
+                            <input type="text" class="form-control form-control-lg" name="zip_code"
+                                placeholder="Enter a city?">
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="action">Action</label>
+                            <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="popover"
+                                title="Please Go to->My Account"
+                                data-content="You need to Sign in to use the website.">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--<div class="col-xl-8 mx-auto mb-2 mb-md-0"-->
+        </div>
+        <!--<div class="row"-->
+    </div>
+
+    <!--Google Map-->
+    <div class="container  border border-dark my-5" id="map"></div>
+    <!-- Footer -->
+    <footer class="footer bg-dark-blue ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-left mr-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="contactUs.html">Contact</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!--JavaScript for Google Maps-->
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 37.1, lng: -95.7 },
+                zoom: 4.5
+
+            });
+        }
+    </script>
+
+    <!--JavaScript for Profile-->
+    <script>
+        function openProfile(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <script>
+
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY" async defer></script>
+</body>
+
+</html>

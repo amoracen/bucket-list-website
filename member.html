@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Group Project">
+    <meta name="author" content="Group Project">
+    <title>Get-Together Bucket List</title>
+    <link rel="icon" href="./favicon.ico">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- My styles for this template -->
+    <link href="mycss/myMapstyle.css" rel="stylesheet">
+    <link href="mycss/mystyle.css" rel="stylesheet">
+    <link href="mycss/mystyleprofile.css" rel="stylesheet">
+    <!-- My styles for the table -->
+    <link href="mycss/mystyleTable.css" rel="stylesheet">
+    <!-- Font-->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+</head>
+
+<body class="bg-light-blue">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue  sticky-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button id="nav-toggle-button" class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand text-white ml-5 text-font-Playfair" href="member.html">Get-Together Bucket
+                    List</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white text-font-Playfair" href="member.html">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-font-Playfair" href="memberContactUs.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row my-4 text-white text-center">
+                <div class="col-xl-10 mx-auto">
+                    <h1 class="text-font-Playfair">Profile Information</h1>
+                    <h3 class="text-font-Playfair">Click on the buttons inside the tabbed menu:</h3>
+                </div>
+                <div class="col-xl-12 mx-auto text-font-Playfair">
+                    <div class="tab bg-dark-blue ">
+                        <button class="tablinks text-white" onclick="openProfile(event, 'Bucket List')">Bucket
+                            List</button>
+                        <button class="tablinks text-white" onclick="openProfile(event, 'Search Friends')">Search
+                            Friends</button>
+                        <button class="tablinks text-white" onclick="openProfile(event, 'Friends List')">Friends
+                            List</button>
+                        <button class="tablinks text-white" onclick="openProfile(event, 'My Info')">My Info</button>
+                        <button class="tablinks text-white" onclick="openProfile(event, 'Log out')">Log out</button>
+                    </div>
+
+                    <div id="Bucket List" class="tabcontent bg-dark-blue text-font-Playfair">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xl-12 text-center">
+                                    <h3>Bucket List</h3>
+                                    <h5>Want to see a list of the activities already saved.</h5>
+                                    <buttom type="buttom" class="btn btn-primary" onclick="showTable()">Print</buttom>
+                                    <hr class="my-2">
+                                </div>
+                                <div class="col-xl-12 text-center">
+                                    <div class="table-wrapper-scroll-y my-custom-scrollbar-activities">
+                                        <div class="table-responsive-md overflow-y:hidden">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <h5 class="text-font-Playfair text-orange">Activity</h5>
+                                                        </th>
+                                                        <th>
+                                                            <h5 class="text-font-Playfair text-orange">Business Name
+                                                            </h5>
+                                                        </th>
+                                                        <th>
+                                                            <h5 class="text-font-Playfair text-orange">Address</h5>
+                                                        </th>
+                                                        <th>
+                                                            <h5 class="text-font-Playfair text-orange">Date</h5>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="table"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--class="col-xl-12-->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Search Friends" class="tabcontent bg-dark-blue">
+                        <section class="">
+                            <div class="container text-white">
+                                <div class="row justify-content-center">
+                                    <h3 class=" my-2 text-font-Playfair">We will search for your friend using the
+                                        username and save it to your friends list.</h3>
+                                    <div class="col-lg-6">
+                                        <form autocomplete="off" action="./php/saveFriend.php" method="POST">
+                                            <div class="form-row  text-center">
+                                                <div class="form-group col-md-6">
+                                                    <h5 for="save_friend">Friend username</h5>
+                                                    <input type="text" class="form-control form-control-md"
+                                                        name="save_friend" placeholder="Looking for a friend?" required>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <h5 for="action">Action</h5>
+                                                    <button type="submit"
+                                                        class="btn btn-block btn-md btn-primary">Search and
+                                                        Save</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--/.col-lg-6-->
+                                </div>
+                            </div><!-- div class="container"-->
+                        </section>
+                    </div>
+
+                    <div id="Friends List" class="tabcontent bg-dark-blue">
+                        <section class="">
+                            <div class="container text-white">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6 ">
+                                        <h3>Friends List</h3>
+                                        <h5>Want to see a list of your friends.</h5>
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="showTableFriends()">Print</button>
+                                        <hr class="my-2">
+                                        <div class="table-wrapper-scroll-y my-custom-scrollbar-activities">
+                                            <div class="table-responsive-md overflow-y:hidden">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <h5 class="text-font-Playfair text-orange">Name</h5>
+                                                            </th>
+                                                            <th>
+                                                                <h5 class="text-font-Playfair text-orange">UserName</h5>
+                                                            </th>
+                                                            <th>
+                                                                <h5 class="text-font-Playfair text-orange">Profile</h5>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="table-friend"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/.col-lg-6-->
+                                </div><!-- div class="row"-->
+                            </div><!-- div class="container"-->
+                        </section>
+                    </div>
+
+                    <div id="My Info" class="tabcontent bg-dark-blue">
+                        <section class="">
+                            <div class="container text-white">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-6 ">
+                                        <h3>My Info</h3>
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="showInfo()">Print</button>
+                                        <hr class="my-2">
+                                        <div class="table-wrapper-scroll-y my-custom-scrollbar-activities">
+                                            <div class="table-responsive-md overflow-y:hidden">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                <h5 class="text-font-Playfair text-orange">Name</h5>
+                                                            </th>
+                                                            <th>
+                                                                <h5 class="text-font-Playfair text-orange">UserName</h5>
+                                                            </th>
+                                                            <th>
+                                                                <h5 class="text-font-Playfair text-orange">Email</h5>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="table-info"></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/.col-lg-6-->
+                                </div><!-- div class="row"-->
+                            </div><!-- div class="container"-->
+                        </section>
+
+                    </div>
+                    <div id="Log out" class="tabcontent bg-dark-blue">
+                        <h3>Thanks for using our website</h3>
+                        <form action="./php/logout.php" method="POST">
+                            <input id="logout" type="submit" type="text" class="btn btn-lg  btn-primary"
+                                value="Log out">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Google Map-->
+    <div class="container-fluid bg-dark-blue text-white text-center">
+        <div class="row">
+            <div class="col-md-12  mx-auto">
+                <h3 class="text-font-Playfair">Select a country, enter an activity, and choose the city:</h3>
+            </div>
+            <div class="col-md-2 ml-auto text-font-Playfair mb-2">
+                <h4> Country:</h4>
+                <select class="custom-select" id="country">
+                    <option value="all">All</option>
+                    <option value="au">Australia</option>
+                    <option value="br">Brazil</option>
+                    <option value="ca">Canada</option>
+                    <option value="fr">France</option>
+                    <option value="de">Germany</option>
+                    <option value="mx">Mexico</option>
+                    <option value="nz">New Zealand</option>
+                    <option value="it">Italy</option>
+                    <option value="za">South Africa</option>
+                    <option value="es">Spain</option>
+                    <option value="pt">Portugal</option>
+                    <option value="us" selected>U.S.A.</option>
+                    <option value="uk">United Kingdom</option>
+                </select>
+            </div>
+            <!--class="col-md-2 mx-auto-->
+            <div class="col-md-3 mx-auto text-font-Playfair mb-2">
+                <h4> Find:</h4>
+                <input type="text" id="query-input" class="form-control" placeholder="What are you searching for?"
+                    required>
+            </div>
+            <div class="col-md-3 mr-auto text-font-Playfair mb-2">
+                <h4> City:</h4>
+                <input id="autocomplete" class="form-control" placeholder="Enter a city" type="text" />
+            </div>
+        </div>
+        <!--class="row "-->
+    </div>
+    <!--class="container-->
+
+    <div class="container border border-dark my-4" id="map"></div>
+    <!--Google Map-->
+    <div class="container-fluid bg-light my-2">
+
+        <div class="row">
+            <div class="col-xl-6 ml-auto text-font-Playfair text-darkblue">
+                <form autocomplete="off" action="./php/insertToBucketList.php" method="POST">
+                    <div class="form-row text-center">
+                        <div class="form-group col-md-5">
+                            <label for="activity">Activity:</label>
+                            <input type="text" class="form-control form-control-lg" id="search_activity"
+                                name="save_activity" required>
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="place_name">Business Name:</label>
+                            <input type="text" class="form-control form-control-lg" id="place_name" name="save_name"
+                                required>
+                        </div>
+                        <div class="form-group col-md-10">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address-to-save" class="form-control" name="save_address" required>
+                        </div>
+                        <div class="form-group col-md-5">
+                            <label for="date">Date:</label>
+                            <input type="text" class="form-control form-control-lg" name="date" placeholder="YYYY/MM/DD"
+                                required>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="action">Action</label>
+                            <button type="submit" class="btn btn-block btn-md btn-primary">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xl-4 mr-auto text-center">
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <div class="table-responsive-md overflow-y:hidden">
+                        <table class="table table-bordered text-darkblue">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <h4 class="text-font-Playfair bg-tansparent text-darkblue">Places Found</h4>
+                                    </th>
+                                    <th>
+                                        <h4 class="text-font-Playfair bg-tansparent text-darkblue">Names</h4>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="results"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div style="display: none">
+                    <div id="info-content">
+                        <table>
+                            <tr id="iw-url-row" class="iw_table_row">
+                                <td id="iw-icon" class="iw_table_icon"></td>
+                                <td id="iw-url"></td>
+                            </tr>
+                            <tr id="iw-address-row" class="iw_table_row">
+                                <td class="text-darkblue iw_attribute_name">Address:</td>
+                                <td class=" text-darkblue" id="iw-address"></td>
+                            </tr>
+                            <tr id="iw-phone-row" class="iw_table_row">
+                                <td class="text-darkblue iw_attribute_name">Telephone:</td>
+                                <td class=" text-darkblue" id="iw-phone"></td>
+                            </tr>
+                            <tr id="iw-rating-row" class="iw_table_row">
+                                <td class="text-darkblue iw_attribute_name">Rating:</td>
+                                <td id="iw-rating"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--class="col-xl-4 mx-auto-->
+        </div>
+        <!--class="row "-->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item">
+                            <a href="#">About</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="memberContactUs.html">Contact</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Terms of Use</a>
+                        </li>
+                        <li class="list-inline-item">&sdot;</li>
+                        <li class="list-inline-item">
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!--JavaScript for Google Maps-->
+    <script src="myjs/myMapJs.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY" async defer></script>
+
+    <!--JavaScript for Profile-->
+    <script>
+        function openProfile(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+    <script>
+        function showTable() {
+            var xhttp;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("table").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "./php/printBucketList.php", true);
+            xhttp.send();
+        }
+        function showTableFriends() {
+            var xhttp;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("table-friend").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "./php/printfriends.php", true);
+            xhttp.send();
+        }
+        function showInfo() {
+            var xhttp;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("table-info").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "./php/myInfo.php", true);
+            xhttp.send();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+table {
+    background-color:transparent!important;
+}
+
+th {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.5em;
+    /*background: #132434;*/
+    color: #ff9800;
+    padding: 4px 6px;
+    border-collapse: separate;
+    border: 2px solid #000;
+}
+
+td {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    color: #ff9800;
+    padding: 4px 6px;
+}
+
+.my-custom-scrollbar-activities {
+  position: relative;
+  height: 250px;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}

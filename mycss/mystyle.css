@@ -1,0 +1,99 @@
+.bg-light-blue {
+	background-color: #e1f3f6 !important;
+}
+.bg-dark-blue {
+	background-color: #132434 !important;
+}
+
+#nav-toggle-button {
+	background-color: darkblue !important;
+}
+
+.text-darkblue {
+	color: darkblue !important;
+}
+
+.text-white {
+	color: white !important;
+}
+
+.text-orange {
+	color: #ff9800 !important;
+}
+
+.section {
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+}
+
+.no-pad-bot {
+	padding-bottom: 0px;
+}
+
+.text-font-Playfair {
+	font-family: 'Playfair Display', serif;
+}
+
+.text-font-Fira {
+	font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+.bg-transparent {
+	background-color: transparent !important;
+}
+
+.bg-white {
+	background-color: white !important;
+}
+
+body {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+header.masthead {
+	position: relative;
+	background-color: #343a40;
+	background: url("../images/bg-masthead.jpg") no-repeat center center;
+	background-size: cover;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+header.masthead .overlay {
+	position: absolute;
+	background-color: #212529;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0.3;
+}
+
+header.masthead h1 {
+	font-size: 2rem;
+}
+
+/* Changed padding from 8 to 4 */
+@media (min-width: 768px) {
+	header.masthead {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	header.masthead h1 {
+		font-size: 3rem;
+	}
+}
+footer.footer {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}

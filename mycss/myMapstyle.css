@@ -1,0 +1,97 @@
+#map {
+    height: 85% !important;
+    width: 85% !important;
+}
+
+/* Optional: Makes the sample page fill the window. */
+
+html,
+body {
+    height: 90%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#listing {
+    position: absolute;
+    width: 200px;
+    height: 470px;
+    overflow: auto;
+    left: 800px;
+    top: 80px;
+    cursor: pointer;
+    overflow-x: hidden;
+}
+
+
+#locationField {
+    position: absolute;
+    width: 190px;
+    height: 25px;
+    left: 108px;
+    top: 0px;
+    z-index: 5;
+    background-color: #fff;
+}
+
+#controls {
+    position: absolute;
+    left: 300px;
+    width: 140px;
+    top: 0px;
+    z-index: 5;
+    background-color: #fff;
+}
+
+#autocomplete {
+    width: 100%;
+}
+
+#country {
+    width: 100%;
+}
+
+.placeIcon {
+    width: 20px;
+    height: 34px;
+    margin: 4px;
+}
+
+.placesIcon {
+    width: 24px;
+    height: 24px;
+}
+
+#resultsTable {
+    border-collapse: collapse;
+    width: 240px;
+}
+
+#rating {
+    font-size: 13px;
+    font-family: Arial Unicode MS;
+}
+
+.iw_table_row {
+    height: 18px;
+}
+
+.iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+}
+
+.iw_table_icon {
+    text-align: right;
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 300px;
+  overflow: auto;
+}
+.table-wrapper-scroll-y {
+  display: block;
+}
